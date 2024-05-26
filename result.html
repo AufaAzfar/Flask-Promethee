@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - PROMETHEE II Product Ranking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Top 3 Ranked Products</h1>
+        <ul>
+            {% for product in top_3_products %}
+            <li>
+                <h2>{{ product.ProductName }}</h2>
+                <p>Price: {{ product.RealPrice }}</p>
+                <p>Skin Type: {{ product.RealSkinType }}</p>
+                <p>Rating: {{ product.Rating }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
